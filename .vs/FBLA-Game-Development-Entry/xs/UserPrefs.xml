@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{719970B7-A888-9138-D68F-695369180CA9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Score/ScoreManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Game Manager/Level_Manager/Level_Controller.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/UI/GameplayUIScript.cs" Line="17" Column="55" />
+      <File FileName="Assets/Scripts/UI/MasterUIScript.cs" Line="10" Column="23" />
+      <File FileName="Assets/Scripts/UI/NextLevelMenuScript.cs" Line="13" Column="74" />
+      <File FileName="Assets/Scripts/Score/ScoreManager.cs" Line="15" Column="57" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FBLA-Game-Development-Entry" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Game Manager" expanded="True">
+                  <Node name="Level_Manager" expanded="True" />
+                </Node>
+                <Node name="Score" expanded="True">
+                  <Node name="ScoreManager.cs" selected="True" />
+                </Node>
+                <Node name="UI" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="703b8406-1d15-4620-8c60-d8b438a0f5a4" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

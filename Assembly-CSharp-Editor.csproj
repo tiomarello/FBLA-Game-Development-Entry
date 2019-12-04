@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6CAB9E81-6CBF-13B3-8CCB-7600384778CF}</ProjectGuid>
+    <ProjectGuid>{67717F96-4ED3-ACFE-9D18-8C8CC94776B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -65,37 +65,37 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\LevelEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/2019.2.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -287,7 +287,7 @@
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>/Users/tiomarello/Documents/FBLA/FBLA GAME GO HARD/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>/Users/tiomarello/Documents/GitHub/FBLA-Game-Development-Entry/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/Applications/2019.2.14f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -646,7 +646,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{5E88C5D2-9ADE-3429-559F-A5587390A676}</Project>
+      <Project>{719970B7-A888-9138-D68F-695369180CA9}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

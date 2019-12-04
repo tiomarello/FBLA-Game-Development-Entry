@@ -13,6 +13,7 @@ public class Level_Controller : MonoBehaviour
     private int currentLevel;
     private GameObject CurrentPlayerObject;
 
+    public float currentLevelTime;
     
     private void Start()
     {
@@ -28,7 +29,10 @@ public class Level_Controller : MonoBehaviour
         //Event Assignments//
         DeathZone.OnFellOutOfMap += RestartPlayer;
     }
-
+    private void Update()
+    {
+        currentLevelTime += Time.deltaTime;
+    }
     public void RestartPlayer()
     {
         Destroy(CurrentPlayerObject);
@@ -37,7 +41,8 @@ public class Level_Controller : MonoBehaviour
 
     public void LoadNewLevel()
     {
-        
+        currentLevelTime = 0;
+
         LevelEntryPoints[currentLevel].UnloadLevel();
         currentLevel++;
         LevelEntryPoints[currentLevel].LoadLevel();

@@ -7,7 +7,7 @@ public class MasterUIScript : MonoBehaviour
 {
     public GameObject NextLevelMenuCanvas;
 
-    private void Awake()
+    private void Start()
     {
         LevelEndPoint.OnLevelEnd += EnableNextLevelMenu;
         Level_Controller.OnNewLevelLoaded += DisableNextLevelMenu;
