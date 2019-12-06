@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handles Escape Menu
+/// </summary>
 public class EscapeMenuScript : MonoBehaviour
 {
     public GameObject EscapeMenuCanvas;
@@ -27,6 +31,6 @@ public class EscapeMenuScript : MonoBehaviour
     }
     public void QuitToMainMenu()
     {
-        //TODO
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

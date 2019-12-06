@@ -6,9 +6,21 @@ public class Player_Movement : MonoBehaviour
 {
     CharacterController PlayerController;
 
+    /// <summary>
+    /// Player speed in units per second.
+    /// </summary>
     public float speed;
+    /// <summary>
+    /// Player jump speed in inital units per second.
+    /// </summary>
     public float jumpSpeed;
+    /// <summary>
+    /// Acceleration of gravity.
+    /// </summary>
     public float gravityConstant;
+    /// <summary>
+    /// Limit on how fast player can fall.
+    /// </summary>
     public float gravityLimit;
 
     private float currentGravity;
@@ -30,15 +42,14 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-      
-        PlayerController.Move(GetPlayerInput());
-        
+       PlayerController.Move(GetPlayerInput());    
     }
 
-
-    //Returns Vector3 value with Playerinput on the X axis, as well as
-    //Processing it by it multiplying it by speed and time.deltaTime/
-    //applying gravity depending on whether the CharacterController is grounded
+    /// <summary>
+    ///Returns Vector3 value with Playerinput on the X axis, as well as
+    ///Processing it by it multiplying it by speed and time.deltaTime/
+    ///applying gravity depending on whether the CharacterController is grounded
+    /// </summary>
     Vector3 GetPlayerInput()
     {
         if (IsGrounded())
@@ -52,7 +63,7 @@ public class Player_Movement : MonoBehaviour
             airTime += Time.deltaTime;
             currentGravity = currentGravity - gravityConstant;
 
-            //We set an upperbound to how large currentGravity can be to limit falling speed
+            //Set an upperbound to how large currentGravity can be to limit falling speed
             if(currentGravity >= gravityLimit &&  !isJumping)
             {
                 currentGravity = gravityLimit;
@@ -60,21 +71,29 @@ public class Player_Movement : MonoBehaviour
             
         }
 
+        //Checks whether Player is inputing space and is either on a surface,
+        //or just left surface, applying a positive force upward for a jump
         if(Input.GetKeyUp(KeyCode.Space) && IsGrounded() || Input.GetKeyUp(KeyCode.Space) && airTime<0.2f)
         {
             isJumping = true;
             currentGravity = jumpSpeed;
         }
+
+        //Causes Player to bounce off of ceiling 
         if (IsCeiling())
         {
-            currentGravity = -2;
+            currentGravity = -PlayerController.velocity.y;
         }
+
+
         Vector3 PlayerInputVector = new Vector3(Input.GetAxis("Horizontal") * speed, currentGravity, 0);
         PlayerInputVector *= Time.deltaTime;
         return (PlayerInputVector);
 
     }
-
+    ///<summary>
+    ///Returns true/false if there is surface directly above Player
+    ///</summary>
     bool IsCeiling()
     {
         RaycastHit Hit;
@@ -85,7 +104,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Physics.Raycast(ray, out Hit, 1.5f))
         {
-            if (Hit.collider.tag == "Ground")
+            if (Hit.collider.CompareTag("Ground"))
             {
                 return (true);
             }
@@ -100,6 +119,10 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns true/false if there is surface directly below Player.
+    /// Use instead of CharacterController.isGrounded, more reliable
+    /// </summary>
     bool IsGrounded()
     {
         RaycastHit Hit;
@@ -110,7 +133,7 @@ public class Player_Movement : MonoBehaviour
         
         if(Physics.Raycast(ray, out  Hit, 1.5f))
         {
-            if (Hit.collider.tag == "Ground")
+            if (Hit.collider.CompareTag("Ground"))
             {
                 return (true);
             }
