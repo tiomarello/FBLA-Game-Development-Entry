@@ -22,29 +22,43 @@ public class Player_Movement : MonoBehaviour
     /// Limit on how fast player can fall.
     /// </summary>
     public float gravityLimit;
+    /// <summary>
+    /// How zoomed in the camera is while moving around.
+    /// </summary>
+    public float CameraSizeOriginal;
+    /// <summary>
+    /// How zoomed in the camera while zoomed out
+    /// </summary>
+    public float CameraSizeZoomed;
+ 
 
     private float currentGravity;
     private float airTime;
+    private float currentSpeed;
+    private float currentCameraSize;
     private bool isJumping;
-   
+    
     //The code runs when game firsts starts
     private void Start()
     {
         //Component Intialization//
-
-        //We initialize our variables by using GetComponent, assuming these components are already on the GameObject
         PlayerController = GetComponent<CharacterController>();
 
         //Variable Initilization//
         currentGravity = 0;
         airTime = 0;
+        currentSpeed = speed;
+        currentCameraSize = CameraSizeOriginal;
     }
 
     private void Update()
     {
        PlayerController.Move(GetPlayerInput());    
     }
-
+    private void FixedUpdate()
+    {
+        IsPlatformed();
+    }
     /// <summary>
     ///Returns Vector3 value with Playerinput on the X axis, as well as
     ///Processing it by it multiplying it by speed and time.deltaTime/
@@ -86,7 +100,7 @@ public class Player_Movement : MonoBehaviour
         }
 
 
-        Vector3 PlayerInputVector = new Vector3(Input.GetAxis("Horizontal") * speed, currentGravity, 0);
+        Vector3 PlayerInputVector = new Vector3(Input.GetAxis("Horizontal") * currentSpeed, currentGravity, 0);
         PlayerInputVector *= Time.deltaTime;
         return (PlayerInputVector);
 
@@ -104,7 +118,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Physics.Raycast(ray, out Hit, 1.5f))
         {
-            if (Hit.collider.CompareTag("Ground"))
+            if (Hit.collider.CompareTag("Ground") || Hit.collider.CompareTag("Platform"))
             {
                 return (true);
             }
@@ -133,7 +147,7 @@ public class Player_Movement : MonoBehaviour
         
         if(Physics.Raycast(ray, out  Hit, 1.5f))
         {
-            if (Hit.collider.CompareTag("Ground"))
+            if (Hit.collider.CompareTag("Ground") || Hit.collider.CompareTag("Platform"))
             {
                 return (true);
             }
@@ -147,5 +161,28 @@ public class Player_Movement : MonoBehaviour
             return (false);
         }
     }
+    void IsPlatformed()
+    {
+        RaycastHit Hit;
+        Ray ray = new Ray();
 
+        ray.direction = Vector3.down;
+        ray.origin = transform.position;
+        
+        if (Physics.Raycast(ray, out Hit, 1.5f))
+        {
+            if (Hit.collider.CompareTag("Platform"))
+            {
+                transform.SetParent(Hit.collider.transform);
+            }
+            else
+            {
+                transform.SetParent(null);
+            }
+        }
+        else
+        {
+            transform.SetParent(null);
+        }
+    }
 }

@@ -1,19 +1,27 @@
 ﻿<Properties StartupConfiguration="{719970B7-A888-9138-D68F-695369180CA9}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Score/ScoreManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Game Enities/MovingPlatform.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game Enities/KeyCollectable.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game Manager/Level_Manager/LevelEndPoint.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game Manager/Level_Manager/Level.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game Manager/Level_Manager/Level_Controller.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Score/ScoreManager.cs" Line="6" Column="14" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FBLA-Game-Development-Entry" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Game Enities" expanded="True">
-                  <Node name="Collectable.cs" selected="True" />
-                </Node>
+                <Node name="Game Enities" expanded="True" />
                 <Node name="Game Manager" expanded="True">
                   <Node name="Level_Manager" expanded="True" />
                 </Node>
                 <Node name="Player" expanded="True" />
-                <Node name="Score" expanded="True" />
+                <Node name="Score" expanded="True">
+                  <Node name="ScoreManager.cs" selected="True" />
+                </Node>
                 <Node name="UI" expanded="True" />
               </Node>
             </Node>

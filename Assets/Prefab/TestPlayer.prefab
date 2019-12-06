@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3424680448845992816}
   - component: {fileID: 3424680448845992075}
   - component: {fileID: 3424680448845992820}
+  - component: {fileID: -5500227836194075920}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -130,6 +131,24 @@ MonoBehaviour:
   jumpSpeed: 25
   gravityConstant: 1
   gravityLimit: 10
+  CameraSizeOriginal: 0
+  CameraSizeZoomed: 0
+--- !u!54 &-5500227836194075920
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424680448845992817}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3424680449404718074
 GameObject:
   m_ObjectHideFlags: 0

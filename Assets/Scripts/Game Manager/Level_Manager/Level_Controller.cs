@@ -28,17 +28,14 @@ public class Level_Controller : MonoBehaviour
     
     private void Start()
     {
-        //Component Intilization//
-        CurrentPlayerObject = GameObject.FindGameObjectWithTag("Player");
-
-        //Variable Initilization//
         currentLevel = 0;
 
-        //Functions//
-        LevelEntryPoints[0].LoadLevel();
-
-        //Event Assignments//
+        
+        CurrentPlayerObject = Instantiate(Player, LevelEntryPoints[0].LevelEntry.position, Quaternion.identity) as GameObject;
+        
         DeathZone.OnFellOutOfMap += RestartPlayer;
+
+        Time.timeScale = 0;
     }
 
     private void Update()
@@ -71,7 +68,14 @@ public class Level_Controller : MonoBehaviour
         CurrentPlayerObject = Instantiate(Player, LevelEntryPoints[currentLevel].LevelEntry) as GameObject;
 
         OnNewLevelLoaded?.Invoke();
-        Time.timeScale = 1;
+    }
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 0;
+        LevelEntryPoints[currentLevel].UnloadLevel();
+        currentLevel = 0;
+        Destroy(CurrentPlayerObject);
+        CurrentPlayerObject = Instantiate(Player, LevelEntryPoints[currentLevel].LevelEntry) as GameObject;
     }
 
     /// <summary>

@@ -21,7 +21,20 @@ public class Level : MonoBehaviour
     /// </summary>
     [TextArea]
     public string LevelIntro;
-
+    ///<summary>
+    /// Text shown at end of level
+    /// </summary>
+    [TextArea]
+    public string LevelEnding;
+    /// <summary>
+    /// Score limit threshold for each level, allowing the player
+    /// to progress to the next.
+    /// </summary>
+    public int LevelScoreTreshold;
+    ///<summary>
+    /// End of level gate, where the player must touch to move to next level
+    /// </summary>
+    public LevelEndPoint LevelEnd;
     /// <summary>
     /// Iterates through level object's entities and marks them Active
     /// </summary>
@@ -29,6 +42,7 @@ public class Level : MonoBehaviour
     {
         foreach(GameObject x in LevelEntities)
         {
+            Debug.Log(x);
             if(x != null)
                 x.SetActive(true);
         }
@@ -45,4 +59,5 @@ public class Level : MonoBehaviour
                 x.SetActive(false);
         }
     }
+    
 }

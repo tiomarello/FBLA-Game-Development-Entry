@@ -12,14 +12,22 @@ public class Player_Lives : MonoBehaviour
     [HideInInspector]
     public int CurrentLives;
 
+    public delegate void Player_LivesDelegate();
+    public static event Player_LivesDelegate OnGameOver;
+
     private void Start()
     {
         CurrentLives = StartingLives;
         Level_Controller.OnLevelRestart += SubstractLife;
     }
-    private void Update()
+    
+    public void CheckGameOver()
     {
-        Debug.Log(CurrentLives);
+        if(CurrentLives <= 0)
+        {
+            OnGameOver?.Invoke();
+            Time.timeScale = 0;
+        }
     }
 
     //Different Operators on the current amount of lives //
@@ -36,11 +44,13 @@ public class Player_Lives : MonoBehaviour
     public void SubstractLife()
     {
         CurrentLives -= 1;
+        CheckGameOver();
         Debug.Log("Took off a life");
     }
     public void SubstractLife(int i)
     {
         CurrentLives -= i;
+        CheckGameOver();
     }
 
 }

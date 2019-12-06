@@ -32,6 +32,6 @@ public class Collectable : MonoBehaviour
     public void Collect()
     {
         SC.AddScore(ScoreAmount);
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
 }

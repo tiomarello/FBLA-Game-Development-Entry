@@ -17,8 +17,12 @@ public class ScoreManager : MonoBehaviour
     
     private void Start()
     {
-        LevelEndPoint.OnLevelEnd += EndLevelScore;
         Level_Controller.OnNewLevelLoaded += ResetScore;
+    }
+
+    private void Update()
+    {
+        CheckForLevelScoreThreshold();
     }
     /// <summary>
     /// Add an integer to current player score.
@@ -32,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// Sum up player score at end of level, including bonuses, penalities, etc.
     /// </summary>
-    public void EndLevelScore()
+    public int EndLevelScore()
     {
         //Score bonuses/penalities are added onto end of level score//
 
@@ -49,6 +53,7 @@ public class ScoreManager : MonoBehaviour
         {
             AddScore(-60);
         }
+        return (PlayerScore);
     }
     /// <summary>
     /// Reset player score to 0.
@@ -56,5 +61,13 @@ public class ScoreManager : MonoBehaviour
     public void ResetScore()
     {
         PlayerScore = 0;
+    }
+
+    public void CheckForLevelScoreThreshold()
+    {
+        if (PlayerScore > LevelControllerData.GetCurrentLevel().LevelScoreTreshold)
+        {
+            LevelControllerData.GetCurrentLevel().LevelEnd.EnableEnd();
+        }
     }
 }
