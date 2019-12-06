@@ -683,4 +683,4 @@ ScriptsOnlyBuild:
   platform: 2
   scenePathNames:
   - Assets/Scenes/TestScene.unity
-  playerPath: /Volumes/NO NAME/TIO UNITY JAWN/FINAL GAme/MacOS/FblaRobotoAdventure.app
+  playerPath: /Users/tiomarello/Desktop/Final FBLA Submission/Final Game/Macos Version/FblaRobotoAdventure.app
